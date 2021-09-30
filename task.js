@@ -40,8 +40,6 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
   let monthlyPercent = percent/12/100;
   //Ежемесячная оплата 
   //Платеж = S * (P + P / (((1 + P)^n) - 1)), где: S - тело кредита, P - 1/12 процентной ставки (от 0 до 1), n - количество месяцев 
-  //let monthlyPayment = principalAmount * (monthlyPercent + monthlyPercent / (((1+monthlyPercent)**numberMonths)-1));
-  let monthlyPayment = principalAmount * (monthlyPercent + monthlyPercent / (Math.pow(1 + monthlyPercent,numberMonths)-1));
-  //totalAmount = String(parseFloat(monthlyPayment * numberMonths).toFixed(2));  
+  let monthlyPayment = principalAmount * (monthlyPercent + monthlyPercent / (Math.pow(1 + monthlyPercent,numberMonths)-1));  
   return parseFloat(monthlyPayment * numberMonths).toFixed(2);
 }
